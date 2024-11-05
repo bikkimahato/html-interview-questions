@@ -70,6 +70,35 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 24  | [How do you create a drop-down list in HTML?](#24-how-do-you-create-a-drop-down-list-in-html) |
 | 25  | [What is the purpose of the `charset` attribute in the `<meta>` tag?](#25-what-is-the-purpose-of-the-charset-attribute-in-the-meta-tag) |
 
+### Level : Medium
+| No. | Questions |
+| --- | --------- |
+| 1   | [Explain the concept of HTML5 and its new features.](#1-explain-the-concept-of-html5-and-its-new-features) |
+| 2   | [How do you embed a YouTube video in an HTML document?](#2-how-do-you-embed-a-youtube-video-in-an-html-document) |
+| 3   | [What is the purpose of the `<canvas>` element in HTML5?](#3-what-is-the-purpose-of-the-canvas-element-in-html5) |
+| 4   | [How do you create responsive images using the `<picture>` tag?](#4-how-do-you-create-responsive-images-using-the-picture-tag) |
+| 5   | [What is the difference between the `<input type="button">` and `<button>` elements?](#5-what-is-the-difference-between-the-input-typebutton-and-button-elements) |
+| 6   | [How do you use the `<template>` tag in HTML5?](#6-how-do-you-use-the-template-tag-in-html5) |
+| 7   | [What is the purpose of the `data-*` attributes in HTML5?](#7-what-is-the-purpose-of-the-data--attributes-in-html5) |
+| 8   | [How do you create a navigation menu using HTML?](#8-how-do-you-create-a-navigation-menu-using-html) |
+| 9   | [Explain the difference between the `href` and `src` attributes.](#9-explain-the-difference-between-the-href-and-src-attributes) |
+| 10  | [How do you create an HTML5 audio player?](#10-how-do-you-create-an-html5-audio-player) |
+| 11  | [What is the purpose of the `<main>` element?](#11-what-is-the-purpose-of-the-main-element) |
+| 12  | [How do you create a modal dialog using HTML?](#12-how-do-you-create-a-modal-dialog-using-html) |
+| 13  | [Explain the difference between the `<header>` and `<footer>` elements.](#13-explain-the-difference-between-the-header-and-footer-elements) |
+| 14  | [How do you create a sticky footer using HTML and CSS?](#14-how-do-you-create-a-sticky-footer-using-html-and-css) |
+| 15  | [What is the purpose of the `<aside>` element?](#15-what-is-the-purpose-of-the-aside-element) |
+| 16  | [How do you use the `required` attribute in HTML forms?](#16-how-do-you-use-the-required-attribute-in-html-forms) |
+| 17  | [What is the `<datalist>` element used for?](#17-what-is-the-datalist-element-used-for) |
+| 18  | [How do you create a progress bar in HTML5?](#18-how-do-you-create-a-progress-bar-in-html5) |
+| 19  | [What is the purpose of the `<mark>` element?](#19-what-is-the-purpose-of-the-mark-element) |
+| 20  | [How do you create a responsive grid layout using HTML and CSS?](#20-how-do-you-create-a-responsive-grid-layout-using-html-and-css) |
+| 21  | [Explain the difference between inline, inline-block, and block elements.](#21-explain-the-difference-between-inline-inline-block-and-block-elements) |
+| 22  | [How do you create a tooltip using HTML and CSS?](#22-how-do-you-create-a-tooltip-using-html-and-css) |
+| 23  | [What is the purpose of the `<figure>` and `<figcaption>` elements?](#23-what-is-the-purpose-of-the-figure-and-figcaption-elements) |
+| 24  | [How do you create a collapsible section in HTML?](#24-how-do-you-create-a-collapsible-section-in-html) |
+| 25  | [Explain the difference between the `<section>` and `<article>` elements.](#25-explain-the-difference-between-the-section-and-article-elements) |
+
 ### Easy HTML Interview Questions
 
 #### 1. What does HTML stand for?
@@ -291,3 +320,369 @@ The `charset` attribute specifies the character encoding for the HTML document, 
 <meta charset="UTF-8">
 ```
  **[⬆ Back to Top](#level--easy)**
+
+### Medium HTML Interview Questions
+
+#### 1. Explain the concept of HTML5 and its new features.
+HTML5 is the latest version of HTML, introducing new elements, attributes, and APIs for more powerful web applications. Notable features include:
+- New semantic elements like `<header>`, `<footer>`, `<article>`, `<section>`.
+- Multimedia elements like `<audio>` and `<video>`.
+- Graphics support with `<canvas>` and SVG.
+- Enhanced form controls and attributes.
+- Offline storage with `localStorage` and `sessionStorage`.
+- Geolocation API.
+- Drag-and-drop support.
+- Web workers for background processing.
+
+ **[⬆ Back to Top](#level--medium)**
+
+#### 2. How do you embed a YouTube video in an HTML document?
+Use the `<iframe>` tag with the `src` attribute set to the YouTube video URL.
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/video_id" frameborder="0" allowfullscreen></iframe>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 3. What is the purpose of the `<canvas>` element in HTML5?
+The `<canvas>` element is used to draw graphics on the fly via JavaScript. It provides a resolution-dependent bitmap canvas for rendering shapes, images, and other graphics.
+```html
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  context.fillStyle = 'red';
+  context.fillRect(10, 10, 150, 75);
+</script>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 4. How do you create responsive images using the `<picture>` tag?
+The `<picture>` tag allows you to specify multiple source images for different screen sizes or resolutions.
+```html
+<picture>
+  <source srcset="image-small.jpg" media="(max-width: 600px)">
+  <source srcset="image-medium.jpg" media="(max-width: 1200px)">
+  <img src="image-large.jpg" alt="Description of the image">
+</picture>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 5. What is the difference between the `<input type="button">` and `<button>` elements?
+The `<input type="button">` creates a button with simple text, whereas the `<button>` element can contain HTML content, including text and images.
+```html
+<input type="button" value="Click me">
+<button>Click <strong>me</strong></button>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 6. How do you use the `<template>` tag in HTML5?
+The `<template>` tag holds HTML content that is not rendered when the page loads, but can be instantiated later using JavaScript.
+```html
+<template id="myTemplate">
+  <p>This is a template</p>
+</template>
+<script>
+  var template = document.getElementById('myTemplate');
+  var clone = template.content.cloneNode(true);
+  document.body.appendChild(clone);
+</script>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 7. What is the purpose of the `data-*` attributes in HTML5?
+The `data-*` attributes allow you to store custom data on HTML elements without needing non-standard attributes. This data can be accessed via JavaScript.
+```html
+<div data-user-id="12345" data-role="admin">User Info</div>
+<script>
+  var div = document.querySelector('div');
+  console.log(div.dataset.userId); // "12345"
+  console.log(div.dataset.role); // "admin"
+</script>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 8. How do you create a navigation menu using HTML?
+Use the `<nav>` element to wrap the navigation links, typically represented using an unordered list (`<ul>`).
+```html
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 9. Explain the difference between the `href` and `src` attributes.
+The `href` attribute specifies the URL of a linked resource, commonly used with `<a>`, `<link>`, and `<base>` tags. The `src` attribute specifies the URL of an embedded resource, commonly used with `<img>`, `<script>`, and `<iframe>` tags.
+```html
+<a href="https://www.example.com">Link</a>
+<img src="image.jpg" alt="Image">
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 10. How do you create an HTML5 audio player?
+Use the `<audio>` tag with the `src` attribute for the audio file and the `controls` attribute to provide playback controls.
+```html
+<audio src="audio.mp3" controls>
+  Your browser does not support the audio element.
+</audio>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 11. What is the purpose of the `<main>` element?
+The `<main>` element specifies the main content of the document. It should contain content unique to the document, excluding repeated content like headers, footers, and navigation.
+```html
+<main>
+  <article>
+    <h1>Main Article</h1>
+    <p>Content of the main article.</p>
+  </article>
+</main>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 12. How do you create a modal dialog using HTML?
+Create a modal dialog using a combination of HTML, CSS, and JavaScript. Here's a simple example:
+```html
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Modal content</p>
+  </div>
+</div>
+
+<style>
+  .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+  .modal-content { background-color: #fff; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; }
+  .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+  .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+</style>
+
+<script>
+  var modal = document.getElementById('myModal');
+  var span = document.getElementsByClassName('close')[0];
+  span.onclick = function() { modal.style.display = 'none'; }
+  window.onclick = function(event) { if (event.target == modal) { modal.style.display = 'none'; } }
+</script>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 13. Explain the difference between the `<header>` and `<footer>` elements.
+The `<header>` element represents introductory content or navigational links, typically found at the top of a section or page. The `<footer>` element represents footer content, typically found at the bottom, often containing metadata, copyright information, or links.
+```html
+<header>
+  <h1>Welcome to My Website</h1>
+  <nav>Navigation links</nav>
+</header>
+<footer>
+  <p>&copy; 2023 My Website</p>
+</footer>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 14. How do you create a sticky footer using HTML and CSS?
+Create a sticky footer by ensuring the footer stays at the bottom of the viewport even if the content is not tall enough.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html { height: 100%; margin: 0; }
+    .wrapper { display: flex; flex-direction: column; height: 100%; }
+    .content { flex: 1; }
+    footer { background: #333; color: white; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <p>Main content goes here...</p>
+    </div>
+    <footer>Sticky Footer</footer>
+  </div>
+</body>
+</html>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 15. What is the purpose of the `<aside>` element?
+The `<aside>` element represents content indirectly related to the main content, such as sidebars, advertisements, or related links. It is often used for additional information or secondary content.
+```html
+<aside>
+  <h2>Related Articles</h2>
+  <ul>
+    <li><a href="#article1">Article 1</a></li>
+    <li><a href="#article2">Article 2</a></li>
+  </ul>
+</aside>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 16. How do you use the `required` attribute in HTML forms?
+The `required` attribute is used in form elements to indicate that the field must be filled out before submitting the form.
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <button type="submit">Submit</button>
+</form>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 17. What is the `<datalist>` element used for?
+The `<datalist>` element provides a list of predefined options for an `<input>` element, enabling the user to choose from the list or enter a custom value.
+```html
+<label for="browsers">Choose a browser:</label>
+<input list="browsers" id="browser" name="browser">
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Safari">
+  <option value="Edge">
+</datalist>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 18. How do you create a progress bar in HTML5?
+Use the `<progress>` element to create a progress bar. The `value` attribute specifies the progress, and the `max` attribute specifies the maximum value.
+```html
+<progress value="70" max="100"></progress>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 19. What is the purpose of the `<mark>` element?
+The `<mark>` element highlights text, indicating relevance or importance. It visually emphasizes text with a yellow background.
+```html
+<p>This is a <mark>highlighted</mark> text.</p>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 20. How do you create a responsive grid layout using HTML and CSS?
+Use CSS Grid Layout to create a responsive grid. Define the grid container and set up columns and rows.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+    </div>
+</body>
+</html>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 21. Explain the difference between inline, inline-block, and block elements.
+
+- **Inline elements**: Do not start on a new line and only take up as much width as necessary. Examples include `<span>`, `<a>`, and `<strong>`.
+- **Inline-block elements**: Behave like inline elements but can have a width and height set. Examples include `<img>` and `<button>`.
+- **Block elements**: Start on a new line and take up the full width available. Examples include `<div>`, `<p>`, and `<h1>`.
+
+ **[⬆ Back to Top](#level--medium)**
+
+#### 22. How do you create a tooltip using HTML and CSS?
+
+You can create a tooltip using HTML and CSS by using the `title` attribute in HTML and custom CSS for styling:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext">Tooltip text</span>
+    </div>
+</body>
+</html>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 23. What is the purpose of the `<figure>` and `<figcaption>` elements?
+
+- **`<figure>`**: Used to represent self-contained content, often with an optional caption.
+- **`<figcaption>`**: Used to provide a caption for the `<figure>` element.
+
+Example:
+```html
+<figure>
+    <img src="image.jpg" alt="Description of image">
+    <figcaption>This is the caption for the image.</figcaption>
+</figure>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 24. How do you create a collapsible section in HTML?
+
+You can create a collapsible section using the `<details>` and `<summary>` elements:
+
+```html
+<details>
+    <summary>Click to expand/collapse</summary>
+    <p>This is the collapsible content.</p>
+</details>
+```
+ **[⬆ Back to Top](#level--medium)**
+
+#### 25. Explain the difference between the `<section>` and `<article>` elements.
+
+- **`<section>`**: Represents a thematic grouping of content, typically with a heading.
+- **`<article>`**: Represents a self-contained piece of content that can be independently distributed or reused.
+
+ **[⬆ Back to Top](#level--medium)**
