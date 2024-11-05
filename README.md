@@ -99,6 +99,35 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 24  | [How do you create a collapsible section in HTML?](#24-how-do-you-create-a-collapsible-section-in-html) |
 | 25  | [Explain the difference between the `<section>` and `<article>` elements.](#25-explain-the-difference-between-the-section-and-article-elements) |
 
+### Level : Hard
+| No. | Questions |
+| --- | --------- |
+| 1   | [How do you implement accessibility features in HTML?](#1-how-do-you-implement-accessibility-features-in-html) |
+| 2   | [Explain the concept of ARIA roles and attributes.](#2-explain-the-concept-of-aria-roles-and-attributes) |
+| 3   | [How do you optimize HTML for search engines (SEO)?](#3-how-do-you-optimize-html-for-search-engines-seo) |
+| 4   | [How do you handle HTML form validation using JavaScript?](#4-how-do-you-handle-html-form-validation-using-javascript) |
+| 5   | [Explain the concept of the Shadow DOM in HTML5.](#5-explain-the-concept-of-the-shadow-dom-in-html5) |
+| 6   | [How do you create a custom HTML element using Web Components?](#6-how-do-you-create-a-custom-html-element-using-web-components) |
+| 7   | [What is the purpose of the `<slot>` element in Web Components?](#7-what-is-the-purpose-of-the-slot-element-in-web-components) |
+| 8   | [How do you use the `contenteditable` attribute in HTML?](#8-how-do-you-use-the-contenteditable-attribute-in-html) |
+| 9   | [How do you create a drag-and-drop interface using HTML5?](#9-how-do-you-create-a-drag-and-drop-interface-using-html5) |
+| 10  | [Explain the difference between `localStorage`, `sessionStorage`, and cookies.](#10-explain-the-difference-between-localstorage-sessionstorage-and-cookies) |
+| 11  | [How do you use the `srcset` attribute in the `<img>` tag?](#11-how-do-you-use-the-srcset-attribute-in-the-img-tag) |
+| 12  | [How do you create an HTML5 web worker?](#12-how-do-you-create-an-html5-web-worker) |
+| 13  | [How do you handle cross-origin resource sharing (CORS) in HTML5?](#13-how-do-you-handle-cross-origin-resource-sharing-cors-in-html5) |
+| 14  | [Explain the difference between the `defer` and `async` attributes in the `<script>` tag.](#14-explain-the-difference-between-the-defer-and-async-attributes-in-the-script-tag) |
+| 15  | [How do you create a single-page application (SPA) using HTML and JavaScript?](#15-how-do-you-create-a-single-page-application-spa-using-html-and-javascript) |
+| 16  | [What is the purpose of the `<details>` and `<summary>` elements?](#16-what-is-the-purpose-of-the-details-and-summary-elements) |
+| 17  | [How do you implement lazy loading for images in HTML5?](#17-how-do-you-implement-lazy-loading-for-images-in-html5) |
+| 18  | [Explain the concept of the `<meta>` viewport tag.](#18-explain-the-concept-of-the-meta-viewport-tag) |
+| 19  | [How do you create an SVG graphic in HTML5?](#19-how-do-you-create-an-svg-graphic-in-html5) |
+| 20  | [How do you implement a service worker in an HTML5 application?](#20-how-do-you-implement-a-service-worker-in-an-html5-application) |
+| 21  | [Explain the difference between `<link>` and `<a>` tags.](#21-explain-the-difference-between-link-and-a-tags) |
+| 22  | [How do you create a responsive design using media queries in HTML and CSS?](#22-how-do-you-create-a-responsive-design-using-media-queries-in-html-and-css) |
+| 23  | [How do you handle offline capabilities in an HTML5 application?](#23-how-do-you-handle-offline-capabilities-in-an-html5-application) |
+| 24  | [Explain the concept of the `<base>` tag and its purpose in HTML.](#24-explain-the-concept-of-the-base-tag-and-its-purpose-in-html) |
+| 25  | [How do you create an HTML5 manifest file for a web application?](#25-how-do-you-create-an-html5-manifest-file-for-a-web-application) |
+
 ### Easy HTML Interview Questions
 
 #### 1. What does HTML stand for?
@@ -686,3 +715,286 @@ You can create a collapsible section using the `<details>` and `<summary>` eleme
 - **`<article>`**: Represents a self-contained piece of content that can be independently distributed or reused.
 
  **[⬆ Back to Top](#level--medium)**
+
+### Hard HTML Interview Questions
+
+#### 1. How do you implement accessibility features in HTML?
+
+Implementing accessibility features involves using semantic HTML elements, ARIA (Accessible Rich Internet Applications) roles and attributes, and ensuring keyboard navigability. Examples include using `<nav>` for navigation, `<header>` for page headers, and setting appropriate `aria-label` attributes for screen readers.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 2. Explain the concept of ARIA roles and attributes.
+
+ARIA roles and attributes enhance the accessibility of web content by providing additional information to assistive technologies. Common roles include `role="button"`, `role="navigation"`, and attributes like `aria-label` for labeling elements.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 3. How do you optimize HTML for search engines (SEO)?
+
+SEO optimization involves using semantic HTML tags, appropriate meta tags (`<title>`, `<meta>`), alt attributes for images, and ensuring a proper heading structure (`<h1>`, `<h2>`, etc.).
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 4. How do you handle HTML form validation using JavaScript?
+
+You can use JavaScript to validate form inputs by adding event listeners to form elements and checking the input values against predefined criteria:
+
+```html
+<form id="myForm">
+    <input type="text" id="name" required>
+    <input type="submit" value="Submit">
+</form>
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        var name = document.getElementById('name').value;
+        if (name === '') {
+            alert('Name is required');
+            event.preventDefault();
+        }
+    });
+</script>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 5. Explain the concept of the Shadow DOM in HTML5.
+
+The Shadow DOM allows encapsulation of DOM and CSS in Web Components, preventing styles and scripts from leaking in or out. This helps create reusable, isolated components.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 6. How do you create a custom HTML element using Web Components?
+
+You can create a custom HTML element using the Custom Elements API:
+
+```javascript
+class MyElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `<p>Hello, world!</p>`;
+    }
+}
+
+customElements.define('my-element', MyElement);
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 7. What is the purpose of the `<slot>` element in Web Components?
+
+The `<slot>` element is used to define placeholders in a shadow DOM where content can be inserted from the light DOM (the main document).
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 8. How do you use the `contenteditable` attribute in HTML?
+
+The `contenteditable` attribute makes an element editable by the user:
+
+```html
+<div contenteditable="true">This is an editable div.</div>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 9. How do you create a drag-and-drop interface using HTML5?
+
+You can create a drag-and-drop interface using the `draggable` attribute and JavaScript event handlers like `ondragstart` and `ondrop`:
+
+```html
+<div id="drag1" draggable="true" ondragstart="drag(event)">Drag me</div>
+<div id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop here</div>
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(data));
+    }
+</script>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 10. Explain the difference between `localStorage`, `sessionStorage`, and cookies.
+
+- **localStorage**: Stores data with no expiration time, accessible only within the same origin.
+- **sessionStorage**: Stores data for the duration of the page session, accessible only within the same origin.
+- **Cookies**: Stores data with an expiration time, accessible across different origins depending on the cookie settings.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 11. How do you use the `srcset` attribute in the `<img>` tag?
+
+The `srcset` attribute specifies multiple image sources for responsive images:
+
+```html
+<img src="small.jpg" srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" sizes="(max-width: 600px) 480px, 800px" alt="Responsive image">
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 12. How do you create an HTML5 web worker?
+
+Web workers run scripts in background threads:
+
+```javascript
+var worker = new Worker('worker.js');
+worker.onmessage = function(event) {
+    console.log(event.data);
+};
+worker.postMessage('Hello, worker!');
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 13. How do you handle cross-origin resource sharing (CORS) in HTML5?
+
+CORS is managed by the server using the `Access-Control-Allow-Origin` header. For example, in a server response:
+
+```http
+Access-Control-Allow-Origin: *
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 14. Explain the difference between the `defer` and `async` attributes in the `<script>` tag.
+
+- **`defer`**: Scripts are executed in order after the HTML is parsed.
+- **`async`**: Scripts are executed as soon as they are downloaded, without waiting for other scripts or HTML parsing.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 15. How do you create a single-page application (SPA) using HTML and JavaScript?
+
+SPAs dynamically update the content without reloading the page, often using frameworks like React, Angular, or Vue.js. Basic example with vanilla JavaScript:
+
+```html
+<div id="app"></div>
+<script>
+    document.getElementById('app').innerHTML = '<h1>Home</h1>';
+    window.onhashchange = function() {
+        if (location.hash === '#about') {
+            document.getElementById('app').innerHTML = '<h1>About</h1>';
+        } else {
+            document.getElementById('app').innerHTML = '<h1>Home</h1>';
+        }
+    };
+</script>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 16. What is the purpose of the `<details>` and `<summary>` elements?
+
+- **`<details>`**: Creates a collapsible section.
+- **`<summary>`**: Acts as a summary or heading for the `<details>` element.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 17. How do you implement lazy loading for images in HTML5?
+
+Use the `loading="lazy"` attribute:
+
+```html
+<img src="image.jpg" alt="Description" loading="lazy">
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 18. Explain the concept of the `<meta>` viewport tag.
+
+The `<meta>` viewport tag controls the layout on mobile browsers:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 19. How do you create an SVG graphic in HTML5?
+
+You can embed SVG directly in HTML:
+
+```html
+<svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 20. How do you implement a service worker in an HTML5 application?
+
+Service workers enable offline functionality:
+
+```javascript
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+    }).catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+    });
+}
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 21. Explain the difference between `<link>` and `<a>` tags.
+
+- **`<link>`**: Defines a relationship between the current document and an external resource (e.g., CSS).
+- **`<a>`**: Defines a hyperlink to another document or location.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 22. How do you create a responsive design using media queries in HTML and CSS?
+
+Use CSS media queries to apply styles based on screen size:
+
+```css
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 23. How do you handle offline capabilities in an HTML5 application?
+
+Use service workers and the Cache API to cache resources for offline use.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 24. Explain the concept of the `<base>` tag and its purpose in HTML.
+
+The `<base>` tag specifies the base URL for all relative URLs in a document:
+
+```html
+<base href="https://www.example.com/">
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 25. How do you create an HTML5 manifest file for a web application?
+
+A manifest file defines the resources to be cached for offline use. Example `manifest.json`:
+
+```json
+{
+    "name": "My App",
+    "short_name": "App",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
+```
+
+Link it in your HTML:
+
+```html
+<link rel="manifest" href="/manifest.json">
+```
+ **[⬆ Back to Top](#level--hard)**
