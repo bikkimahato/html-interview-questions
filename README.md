@@ -127,6 +127,17 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 23  | [How do you handle offline capabilities in an HTML5 application?](#23-how-do-you-handle-offline-capabilities-in-an-html5-application) |
 | 24  | [Explain the concept of the `<base>` tag and its purpose in HTML.](#24-explain-the-concept-of-the-base-tag-and-its-purpose-in-html) |
 | 25  | [How do you create an HTML5 manifest file for a web application?](#25-how-do-you-create-an-html5-manifest-file-for-a-web-application) |
+| 26  | [How do you implement dark mode in a web application using HTML and CSS?](#26-how-do-you-implement-dark-mode-in-a-web-application-using-html-and-css) |
+| 27  | [Explain how to use the `picture` element for responsive images.](#27-explain-how-to-use-the-picture-element-for-responsive-images) |
+| 28  | [How do you implement a sticky header using HTML and CSS?](#28-how-do-you-implement-a-sticky-header-using-html-and-css) |
+| 29  | [What are the new input types introduced in HTML5, and how do you use them?](#29-what-are-the-new-input-types-introduced-in-html5-and-how-do-you-use-them) |
+| 30  | [How do you handle internationalization (i18n) in an HTML application?](#30-how-do-you-handle-internationalization-i18n-in-an-html-application) |
+| 31  | [Explain the concept and benefits of progressive web apps (PWAs).](#31-explain-the-concept-and-benefits-of-progressive-web-apps-pwas) |
+| 32  | [How do you create an accessible modal dialog using HTML, CSS, and JavaScript?](#32-how-do-you-create-an-accessible-modal-dialog-using-html-css-and-javascript) |
+| 33  | [How do you implement a grid layout using CSS Grid in an HTML document?](#33-how-do-you-implement-a-grid-layout-using-css-grid-in-an-html-document) |
+| 34  | [Explain the role of the `Content-Security-Policy` header in securing HTML applications.](#34-explain-the-role-of-the-content-security-policy-header-in-securing-html-applications) |
+| 35  | [How do you create a CSS custom property (variable) and use it in your HTML document?](#35-how-do-you-create-a-css-custom-property-variable-and-use-it-in-your-html-document) |
+
 
 ### Easy HTML Interview Questions
 
@@ -997,4 +1008,696 @@ Link it in your HTML:
 ```html
 <link rel="manifest" href="/manifest.json">
 ```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 26. How do you implement dark mode in a web application using HTML and CSS?
+
+Implementing dark mode in a web application can enhance user experience by providing a visually comfortable interface, especially in low-light environments. Here's how you can do it:
+
+### Steps:
+
+1. **Define Dark Mode Styles**: Create a separate CSS file or define dark mode styles within your main CSS file.
+2. **Toggle Dark Mode with JavaScript**: Use JavaScript to toggle between light and dark modes.
+3. **Persist User Preference**: Save the user's preference in `localStorage` so it persists across sessions.
+
+### Example:
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    <h1>Hello, World!</h1>
+    <p>This is an example of dark mode implementation.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### CSS (styles.css):
+```css
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+```
+
+#### JavaScript (script.js):
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggle-dark-mode');
+    const body = document.body;
+
+    // Load stored preference
+    const darkMode = localStorage.getItem('dark-mode');
+    if (darkMode === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            localStorage.removeItem('dark-mode');
+        }
+    });
+});
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 27. Explain how to use the `picture` element for responsive images.
+
+The `picture` element allows you to define multiple sources for an image, enabling responsive design by serving different images based on the viewport size or device pixel ratio.
+
+### Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images with Picture Element</title>
+</head>
+<body>
+    <picture>
+        <source srcset="image-320w.jpg" media="(max-width: 320px)">
+        <source srcset="image-480w.jpg" media="(max-width: 480px)">
+        <source srcset="image-800w.jpg" media="(max-width: 800px)">
+        <img src="image-800w.jpg" alt="Responsive Image">
+    </picture>
+</body>
+</html>
+```
+
+### Explanation:
+
+- `<source>` elements specify different images for various conditions.
+- `srcset` attribute defines the image URL.
+- `media` attribute specifies the media query.
+- `<img>` element provides a default image if none of the conditions are met.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 28. How do you implement a sticky header using HTML and CSS?
+
+A sticky header remains fixed at the top of the viewport as the user scrolls down the page.
+
+### Example:
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <h1>Sticky Header</h1>
+    </header>
+    <main>
+        <p>Content goes here...</p>
+        <!-- Add more content to enable scrolling -->
+    </main>
+</body>
+</html>
+```
+
+#### CSS (styles.css):
+```css
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+```
+
+### Explanation:
+
+- `position: sticky;` makes the header stick to the top of the viewport.
+- `top: 0;` ensures the header sticks to the top.
+- `z-index: 1000;` keeps the header above other content.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 29. What are the new input types introduced in HTML5, and how do you use them?
+
+HTML5 introduced several new input types to improve form usability and validation.
+
+### New Input Types:
+
+1. `email`: Validates email addresses.
+2. `url`: Validates URLs.
+3. `tel`: Input for telephone numbers.
+4. `number`: Input for numeric values.
+5. `range`: Input for selecting a value from a range.
+6. `date`: Input for date selection.
+7. `time`: Input for time selection.
+8. `datetime-local`: Input for selecting date and time.
+9. `month`: Input for selecting a month.
+10. `week`: Input for selecting a week.
+11. `color`: Input for color selection.
+
+### Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Input Types</title>
+</head>
+<body>
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="url">Website:</label>
+        <input type="url" id="url" name="url"><br><br>
+
+        <label for="tel">Phone Number:</label>
+        <input type="tel" id="tel" name="tel"><br><br>
+
+        <label for="number">Number:</label>
+        <input type="number" id="number" name="number"><br><br>
+
+        <label for="range">Range:</label>
+        <input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time"><br><br>
+
+        <label for="datetime-local">Date and Time:</label>
+        <input type="datetime-local" id="datetime-local" name="datetime-local"><br><br>
+
+        <label for="month">Month:</label>
+        <input type="month" id="month" name="month"><br><br>
+
+        <label for="week">Week:</label>
+        <input type="week" id="week" name="week"><br><br>
+
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 30. How do you handle internationalization (i18n) in an HTML application?
+
+Internationalization (i18n) is the process of designing a web application to support multiple languages and regions.
+
+### Steps:
+
+1. **Use Unicode**: Ensure your application supports Unicode.
+2. **Locale-Specific Content**: Create content files for each locale.
+3. **Language Switcher**: Provide a mechanism to switch languages.
+4. **External Libraries**: Use libraries like i18next for managing translations.
+
+### Example:
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internationalization Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <select id="language-switcher">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+    <h1 id="greeting">Hello, World!</h1>
+
+    <script src="i18next.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### JavaScript (script.js):
+```javascript
+const resources = {
+    en: {
+        translation: {
+            "greeting": "Hello, World!"
+        }
+    },
+    es: {
+        translation: {
+            "greeting": "¡Hola, Mundo!"
+        }
+    }
+};
+
+i18next.init({
+    lng: 'en',
+    resources
+}, (err, t) => {
+    if (err) return console.error(err);
+    document.getElementById('greeting').textContent = t('greeting');
+});
+
+document.getElementById('language-switcher').addEventListener('change', (event) => {
+    const lng = event.target.value;
+    i18next.changeLanguage(lng, (err, t) => {
+        if (err) return console.error(err);
+        document.getElementById('greeting').textContent = t('greeting');
+    });
+});
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 31. Explain the concept and benefits of progressive web apps (PWAs).
+
+Progressive Web Apps (PWAs) are web applications that use modern web technologies to deliver app-like experiences to users.
+
+### Benefits:
+
+1. **Offline Capabilities**: Work offline using service workers.
+2. **Installable**: Can be installed on the user's device like native apps.
+3. **Responsive**: Adapt to various screen sizes and orientations.
+4. **Fast Loading**: Load quickly even on slow networks.
+5. **Secure**: Served over HTTPS to ensure security.
+
+### Example:
+
+#### Manifest File (manifest.json):
+```json
+{
+    "name": "PWA Example",
+    "short_name": "PWA",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
+```
+
+#### Service Worker (service-worker.js):
+```javascript
+self.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches.open('pwa-cache').then((cache) => {
+            return cache.addAll([
+                '/',
+                '/index.html',
+                '/styles.css',
+                '/script.js',
+                '/icon-192x192.png',
+                '/icon-512x512.png'
+            ]);
+        })
+    );
+});
+
+self.addEventListener('fetch', (event) => {
+    event.respondWith(
+        caches.match(event.request).then((response) => {
+            return response || fetch(event.request);
+        })
+    );
+});
+```
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <h1>Progressive Web App Example</h1>
+    <p>This is a simple PWA example.</p>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 32. How do you create an accessible modal dialog using HTML, CSS, and JavaScript?
+
+Creating an accessible modal dialog involves ensuring that the dialog is keyboard-navigable and screen-reader friendly.
+
+### Steps:
+
+1. **HTML Structure**: Use semantic HTML and ARIA roles.
+2. **CSS Styling**: Style the modal and overlay.
+3. **JavaScript**: Manage focus and accessibility.
+
+### Example:
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Modal Dialog Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="open-modal">Open Modal</button>
+
+    <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <h2 id="modal-title">Modal Title</h2>
+            <p>This is an accessible modal dialog.</p>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### CSS (styles.css):
+```css
+.modal, .overlay {
+    display: none;
+}
+
+.modal[aria-hidden="false"], .overlay[aria-hidden="false"] {
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+```
+
+#### JavaScript (script.js):
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    const openModalButton = document.getElementById('open-modal');
+    const closeModalButton = document.getElementById('close-modal');
+    const modal = document.getElementById('modal');
+    const overlay = document.getElementById('overlay');
+
+    openModalButton.addEventListener('click', () => {
+        modal.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+        closeModalButton.focus();
+    });
+
+    closeModalButton.addEventListener('click', () => {
+        modal.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('aria-hidden', 'true');
+        openModalButton.focus();
+    });
+});
+```
+ **[⬆ Back to Top](#level--hard)**
+
+#### 33. How do you implement a grid layout using CSS Grid in an HTML document?
+
+CSS Grid is a powerful layout system that allows you to create complex grid-based layouts.
+
+### Example:
+
+#### HTML:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item item1">Item 1</div>
+        <div class="item item2">Item 2</div>
+        <div class="item item3">Item 3</div>
+        <div class="item item4">Item 4</div>
+        <div class="item item5">Item 5</div>
+        <div class="item item6">Item 6</div>
+    </div>
+</body>
+</html>
+```
+
+#### CSS (styles.css):
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.item {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+```
+
+### Explanation:
+
+- `display: grid;` enables grid layout.
+- `grid-template-columns: repeat(3, 1fr);` creates three equal-width columns.
+- `gap: 10px;` sets the gap between grid items.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 34. Explain the role of the `Content-Security-Policy` header in securing HTML applications.
+
+The `Content-Security-Policy` (CSP) header is a security feature that helps prevent various types of attacks, including Cross-Site Scripting (XSS) and data injection attacks.
+
+### Benefits:
+
+1. **Prevents XSS Attacks**: Restricts the sources of script content.
+2. **Mitigates Data Injection Attacks**: Limits the sources of data that can be loaded.
+3. **Protects Against Clickjacking**: Controls which sites can embed your content.
+
+### Example:
+
+#### HTTP Header:
+```
+Content-Security-Policy: default-src 'self'; img-src https://example.com; script-src 'self' https://apis.example.com
+```
+
+### Explanation:
+
+- `default-src 'self';` allows content only from the same origin.
+- `img-src https://example.com;` allows images from `example.com`.
+- `script-src 'self' https://apis.example.com;` allows scripts from the same origin and `apis.example.com`.
+
+ **[⬆ Back to Top](#level--hard)**
+
+#### 35. How do you create a CSS custom property (variable) and use it in your HTML document?
+
+CSS custom properties, also known as CSS variables, are entities defined by CSS authors that contain specific values to be reused throughout a document. They can make your CSS more maintainable and easier to read.
+
+#### Creating a CSS Custom Property
+
+To create a CSS custom property, you use the `--` prefix followed by the property name. Custom properties are usually defined within a `:root` selector so they can be accessed anywhere in the document.
+
+```css
+:root {
+  --main-bg-color: #3498db;
+  --main-text-color: #ffffff;
+  --spacing: 16px;
+}
+```
+
+In this example:
+- `--main-bg-color` is a custom property for the primary background color.
+- `--main-text-color` is a custom property for the text color.
+- `--spacing` is a custom property for spacing.
+
+#### Using CSS Custom Properties
+
+To use a custom property, you use the `var()` function.
+
+```css
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: var(--spacing);
+}
+```
+
+In this example:
+- `background-color` is set to the value of `--main-bg-color`.
+- `color` is set to the value of `--main-text-color`.
+- `padding` is set to the value of `--spacing`.
+
+### Example: Full HTML and CSS Implementation
+
+Here is a complete example demonstrating how to create and use CSS custom properties in an HTML document.
+
+#### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Custom Properties Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Website</h1>
+  </header>
+  <main>
+    <p>This is a paragraph with main text color and spacing.</p>
+  </main>
+  <footer>
+    <p>Footer content here.</p>
+  </footer>
+</body>
+</html>
+```
+
+#### CSS (styles.css)
+
+```css
+:root {
+  --main-bg-color: #3498db;
+  --main-text-color: #ffffff;
+  --secondary-bg-color: #2ecc71;
+  --secondary-text-color: #333333;
+  --spacing: 16px;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: var(--spacing);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  padding: var(--spacing);
+  text-align: center;
+}
+
+main {
+  padding: var(--spacing);
+}
+
+footer {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  padding: var(--spacing);
+  text-align: center;
+}
+```
+
+### Detailed Explanation
+
+1. **Defining Custom Properties**: 
+   - Custom properties are defined within the `:root` pseudo-class. This is a special selector that matches the document’s root element and allows you to define global variables.
+   - Each custom property is prefixed with `--`.
+
+2. **Using Custom Properties**:
+   - The `var()` function is used to retrieve the value of a custom property.
+   - Custom properties can be used in any CSS property.
+
+3. **Benefits**:
+   - **Reusability**: Custom properties can be reused throughout your CSS, reducing redundancy.
+   - **Maintainability**: Changes to custom properties automatically propagate to all instances where they’re used.
+   - **Dynamic Styling**: Custom properties can be updated dynamically using JavaScript for responsive or interactive designs.
+
+4. **Fallback Values**:
+   - You can provide a fallback value for `var()`, in case the custom property is not defined.
+
+```css
+body {
+  background-color: var(--main-bg-color, #000000);
+}
+```
+
+In this example, if `--main-bg-color` is not defined, `#000000` will be used as the background color.
+
+### Conclusion
+
+CSS custom properties (variables) are a powerful feature for managing and maintaining your styles efficiently. By understanding how to create and use them, you can write more modular and scalable CSS.
+
  **[⬆ Back to Top](#level--hard)**
